@@ -260,4 +260,31 @@ export class UsersRepository {
             throw error;
         }
     }
+    async findByName(name: string): Promise<any[]> {
+        const users = await this.prisma.user.findMany({
+            where: {
+                name: {
+                    contains: name,
+                    mode: 'insensitive', // Busca case insensitive
+                },
+            },
+            select: {
+                name: true,
+                email: true,
+                position: true,
+                rg: true,
+                cpf: true,
+                cnpj: true,
+                mobile_phone: true,
+            },
+            take: 5, // Limita o resultado aos 5 primeiros
+        });
+
+        if (!users || users.length === 0) {
+            this.logger.info(`Nenhum usuário encontrado com o nome "${name}"`);
+            return [];
+        }
+
+        return users;
+    }
 }

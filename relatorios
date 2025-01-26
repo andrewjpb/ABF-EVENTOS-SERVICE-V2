@@ -1,0 +1,93 @@
+# Relatórios de Eventos
+
+## 1. Análise de Participação
+- Total de inscritos por evento
+- Taxa de check-in vs inscritos
+- Distribuição de participantes por tipo (attendee_type)
+- Ocupação de vagas por evento (vacancy_total vs inscritos)
+- Eventos com maior/menor taxa de participação
+
+## 2. Análise por Segmento
+- Distribuição de participantes por segmento empresarial
+- Empresas mais presentes nos eventos
+- Segmentos mais representativos
+
+## 3. Análise Geográfica
+- Distribuição de eventos por cidade/estado
+- Origem dos participantes por região
+- Eventos com maior alcance geográfico
+
+## 4. Análise Temporal
+- Eventos por período
+- Horários mais populares (baseado em start_time e end_time)
+- Sazonalidade dos eventos
+- Taxa de ocupação por período
+
+# Relatórios de Usuários
+
+## 1. Perfil dos Participantes
+- Distribuição por cargo (position)
+- Participantes mais frequentes
+- Distribuição por tipo de usuário (roles)
+
+## 2. Empresarial
+- Empresas mais ativas
+- Distribuição de participantes por empresa
+- Segmentos empresariais mais engajados
+
+# Relatórios Operacionais
+
+## 1. Gestão de Capacidade
+- Eventos próximos da lotação
+- Previsão de ocupação
+- Análise de quórum mínimo vs presença real
+
+## 2. Análise de Formato
+- Comparativo de participação: presencial vs online
+- Performance de eventos gratuitos vs pagos
+- Efetividade de eventos destacados (highlight)
+
+## 3. Análise de Palestrantes e Patrocinadores
+- Palestrantes mais requisitados
+- Eventos por patrocinador
+- Correlação entre patrocinadores e participação
+
+# Relatórios de Performance
+
+## 1. Métricas de Sucesso
+- Taxa de conversão (inscritos vs check-in)
+- Eventos com maior engajamento
+- Análise de eventos destacados vs não destacados
+
+## 2. Análise de Tendências
+- Formatos mais bem sucedidos
+- Temas mais populares
+- Horários com melhor performance
+
+# Relatórios de Compliance
+
+## 1. Auditoria
+- Log de inscrições por período
+- Verificação de duplicidade de inscrições
+- Controle de permissões e acessos
+
+# Dashboards Sugeridos
+
+## 1. Dashboard Executivo
+- Número total de eventos
+- Total de participantes
+- Taxa média de ocupação
+- Distribuição geográfica
+- Top 5 eventos mais populares
+
+## 2. Dashboard Operacional
+- Eventos próximos
+- Status de inscrições
+- Taxa de check-in em tempo real
+- Alertas de lotação
+
+## 3. Dashboard de Marketing
+- Performance de eventos destacados
+- Engajamento por tipo de evento
+- Análise de público-alvo
+- Efetividade dos patrocinadores
