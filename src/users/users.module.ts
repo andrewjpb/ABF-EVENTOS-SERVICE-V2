@@ -11,6 +11,8 @@ import { EventModule } from '../event/event.module';
 import { JobModule } from '../jobs/job.module';
 import { JobService } from '../jobs/job.service';
 import { CompanyModule } from '../company/company.module';
+import { FindUserByNameController } from './v2/use-cases/FindUserByName/controller';
+import { FindUserByNameService } from './v2/use-cases/FindUserByName/service';
 
 @Module({
     imports: [
@@ -23,8 +25,8 @@ import { CompanyModule } from '../company/company.module';
         CompanyModule,
         JobModule,
     ],
-    controllers: [UsersController],
-    providers: [UsersService, UsersRepository, JobService],
+    controllers: [UsersController, FindUserByNameController],
+    providers: [UsersService, UsersRepository, JobService, FindUserByNameService],
     exports: [UsersService],
 })
 export class UsersModule {}

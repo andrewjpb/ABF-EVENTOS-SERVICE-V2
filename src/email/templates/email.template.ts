@@ -78,9 +78,6 @@ export const EmailTemplate = {
                     1- Esta inscrição é válida exclusivamente para o dia
                     {{event-date}}.
                   </p>
-                  <p style="margin: 0;">
-                    2- Apresente seu QRCode no dia do evento no credenciamento.
-                  </p>
                   <div role="separator" style="line-height: 24px">&zwj;</div>
                   <div>
                     <a href="{{schedule_link}}" style="display: inline-block; border-radius: 4px; background-color: #00539a; padding: 16px 24px; font-size: 16px; font-weight: 600; line-height: 1; color: #f8fafc; text-decoration: none">
@@ -520,9 +517,7 @@ export const EmailTemplate = {
                     1- Esta inscrição é válida exclusivamente para o dia
                     {{event-date}}.
                   </p>
-                  <p style="margin: 0;">
-                    2- Apresente seu QRCode no dia do evento no credenciamento.
-                  </p>
+                
                   <div role="separator" style="line-height: 24px">&zwj;</div>
                   <div>
                     <a href="{{schedule_link}}" style="display: inline-block; border-radius: 4px; background-color: #00539a; padding: 16px 24px; font-size: 16px; font-weight: 600; line-height: 1; color: #f8fafc; text-decoration: none">
