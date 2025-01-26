@@ -197,12 +197,13 @@ export class CheckInRepository {
     //criado por Andrew
     async checkEventVacancies(data: { idEvento: string; cnpj?: string }) {
         const { cnpj, idEvento } = data;
-
+    
         // Se idEvento não for fornecido, retornar erro
         if (!idEvento) {
             throw new UnauthorizedRrror('O ID do evento é obrigatório para verificar vagas.');
         }
-
+    
+        // Buscar informações do evento
         const event = await this.prisma.event.findUnique({
             where: { id: idEvento },
             select: {
@@ -210,34 +211,42 @@ export class CheckInRepository {
                 vacancies_per_brand: true,
             },
         });
-
+    
         if (!event) {
             throw new EntityNotFoundError('Evento não encontrado.');
         }
-
+    
+        // Calcular vagas totais restantes
         const totalAttendees = await this.prisma.attendanceList.count({
             where: { eventId: idEvento },
         });
-
-        const vacanciesLeft = event.vacancy_total - totalAttendees;
-
+    
+        const vacanciesLeft = Math.max(event.vacancy_total - totalAttendees, 0);
+        console.log(vacanciesLeft);
+        // Verificar vagas para a marca (se CNPJ for fornecido)
         if (cnpj) {
             const companyAttendees = await this.prisma.attendanceList.count({
-                where: { eventId: idEvento, company_cnpj: cnpj },
+                where: { eventId: idEvento, company_cnpj: cnpj, AND: {
+                    attendee_type: "in_person"
+                } },
             });
-
-            const companyVacanciesLeft = event.vacancies_per_brand - companyAttendees;
-
+           
+            const companyVacanciesLeft = event.vacancies_per_brand
+                ? Math.max(event.vacancies_per_brand - companyAttendees, 0)
+                : 0;
+    
             return {
                 totalVacanciesLeft: vacanciesLeft,
                 companyVacanciesLeft: companyVacanciesLeft,
             };
         }
-
+    
+        // Retornar apenas vagas totais se CNPJ não for fornecido
         return {
             totalVacanciesLeft: vacanciesLeft,
         };
     }
+    
 
     async findById(id: string) {
         return this.prisma.attendanceList.findUnique({
